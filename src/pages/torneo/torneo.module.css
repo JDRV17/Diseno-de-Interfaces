@@ -1,0 +1,85 @@
+.cajita{
+    color: white;
+    font-size: x-large;
+    padding-top: 0;
+    padding-bottom: 0px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    display: flex;
+    background-color: #47525E;
+    padding: 1px;   
+}
+
+.titulos{
+    display: flex;
+}
+
+.derecha{
+    padding-left: 21%;
+    
+}
+
+.centro{
+    margin-left: 27%;
+
+}
+
+.izquierda{
+    margin-left: 4%;
+}
+
+.torneo{
+    margin-right: 10%;
+    margin-left: 90px;
+}
+
+.direccion{
+    text-align: center;
+    margin-left: 20%;
+    
+}
+
+.hora{
+    text-align: right;
+    margin-left: 18%;
+}
+
+.cajitaC{
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+    margin-left: 4%;
+    margin-right: 23%;
+    border: 2px solid #ccc;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+
+
+.cajitaP{
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+    margin-right: 20%;
+    border: 2px solid #ccc;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+
+.cajitaD{
+    width: 200px;
+    height: 10px;
+    padding: 10px;
+    margin-right: 20%;
+    border: 2px solid #ccc;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    border-radius: 10%;
+    margin-top: 30px;
+}
+

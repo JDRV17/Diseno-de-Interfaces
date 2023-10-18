@@ -1,0 +1,38 @@
+.MenuGeneral {
+    text-align: center;
+  }
+  
+  .menu ul {
+    list-style: none;
+    display: flex;
+    padding: 1;
+  }
+
+  .menu li {
+    margin-right: 50px;
+    margin-left: 20px;
+  }
+  .titulo{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  .titulo:hover{
+    color: green;
+  }
+
+  .botonRegistro{
+    color: black;
+    background-color: #29BD3C; 
+    border-radius: 10%;
+    cursor: pointer;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .botonRegistro:hover{
+    background-color:lightgreen;
+  }
+
+  

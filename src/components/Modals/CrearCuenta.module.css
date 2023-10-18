@@ -1,0 +1,93 @@
+.modalBackground{
+    height: 110vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /*#A6A6A6 */
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.titulo{
+    color: black;
+}
+.modalContainer{
+    width: 500px;
+    height: 510px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.title button{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: 450px;
+    cursor: pointer;
+}
+
+.modalContainer .title{
+    display: inline-block;
+    text-align: center;
+}
+
+.body p{
+    font-size: small;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form input{
+    width: 90%;
+    outline: none;
+    border: 1px solid white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    background: #E1E1E1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px
+}
+
+.footer button{
+    display: flex;
+    margin-left: 170px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px 20px
+}
+
+.botonCrear{
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 18px;
+    outline: none;
+    border: none;
+    background-color: #29BD3C;
+    color: black;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.botonCrear:hover{
+    background-color: lightgreen;
+}
+
+.member{
+    font-size: 1rem;
+    margin-top: 1.4rem;
+    color: grey;
+}
+.sesion{
+    color: green;
+    text-decoration: none;
+    cursor: pointer;
+}

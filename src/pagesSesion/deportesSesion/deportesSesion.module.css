@@ -1,0 +1,88 @@
+.DeportesH1{
+    margin-right: 80px;
+    color: black;
+}
+.titulo{
+    color: black;
+}
+.DeportesH1 ul{
+    list-style: none;
+    display: flex;
+    padding: 1;
+    gap: 220px;
+    margin-left: 100px;
+}
+
+.futbol11 ul {
+    background-color: #47525E;
+    padding: 1px;
+}
+.futbol11 h1 {
+    list-style: none;
+    display: inline-block;
+    padding: 1;
+    gap: 300px;
+    color: white;
+    padding-right: 400px;
+    padding-left: 100px;
+    margin-left: 70px;
+}
+
+.tenis ul {
+    background-color: #47525E;
+    padding: 1px;
+   
+}
+.tenis h1 {
+    list-style: none;
+    display: inline-block;
+    padding: 1;
+    gap: 300px;
+    color: white;
+    padding-right: 420px;
+    padding-left: 130px;
+    margin-left: 70px;
+}
+
+.basquet ul {
+    background-color: #47525E;
+    padding: 1px;
+}
+.basquet h1 {
+    list-style: none;
+    display: inline-block;
+    padding: 1;
+    gap: 300px;
+    color: white;
+    padding-right: 410px;
+    padding-left: 87px;
+    margin-left: 70px;
+}
+
+.voleibol ul {
+    background-color: #47525E;
+    padding: 1px;
+}
+.voleibol h1 {
+    list-style: none;
+    display: inline-block;
+    padding: 1;
+    gap: 300px;
+    color: white;
+    padding-right: 415px;
+    padding-left: 110px;
+    margin-left: 70px;
+}
+
+
+
+.selectDeporte{
+    padding: 10px;
+    margin-right: 75%;
+    border: 2px solid #ccc;
+    font-weight: bold;
+    border-radius: 10%;
+    margin-top: 30px;
+    color: black;
+    background-color: #E6E6E6;
+}

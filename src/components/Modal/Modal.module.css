@@ -1,0 +1,17 @@
+.container{
+    height: 122vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /*#A6A6A6 */
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window {
+    background-color: white;
+    height: 200px;
+    width: 300px;
+}

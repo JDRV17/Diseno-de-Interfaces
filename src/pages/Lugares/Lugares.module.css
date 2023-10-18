@@ -1,0 +1,67 @@
+.fotoLugares {
+    width: 500px;
+    border: 1px solid grey;
+}
+.posicionFoto{
+    margin-left: 50px;
+    padding-top: 28px;
+}
+.titulo{
+    color: black;
+}
+.cajasTexto {
+    padding: 10px; 
+    margin: 5px; 
+    border: 2px solid #ccc;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    border-radius: 10%;
+}
+.posicionCajas{
+    list-style: none;
+    padding: 1;
+    display: flex;
+    
+}
+.posicionTitulo{
+    margin-left: 0px;
+}
+.textoTodos{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #1DA42E;
+    font-weight: bold;
+}
+.botonBuscar {
+    padding: 10px;     
+    margin: 5px; 
+    border: 2px solid #ccc;
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: #E6E6E6;
+    color: grey;
+    font-weight: bold;
+}
+.botonBuscar:hover{
+    color: black;
+}
+.cajasLugares ul {
+    background-color: #E1E1E1;
+    padding: 0.1px;
+}
+.textoCajasLugares{
+    margin-right: 300px;
+}
+
+.posicionFotoTexto{
+    justify-content: space-between;
+    display: flex;
+}
+
+.informacionLugares{
+    padding-right: 190px;
+}
+
+.divDer{
+    margin-bottom: 400px;
+}

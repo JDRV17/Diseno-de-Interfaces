@@ -1,0 +1,32 @@
+.menuGeneral {
+    text-align: center;
+  }
+  
+.menu{
+    margin-right: 400px;
+}
+
+  .menu ul {
+    list-style: none;
+    display: flex;
+    padding: 1;
+    margin-right: 100px;
+  }
+
+  .menu li {
+    margin-right: 50px;
+    margin-left: 20px;
+  }
+  .titulo{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin-right: 50px;
+  }
+  .titulo:hover{
+    color: green;
+  }
+  .imagenperfil{
+    cursor: pointer;
+  }

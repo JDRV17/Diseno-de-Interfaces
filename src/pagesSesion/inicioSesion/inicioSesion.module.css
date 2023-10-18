@@ -1,0 +1,85 @@
+.posicionTextoLogo{
+    justify-content: space-between;
+    display: flex;
+  }
+  
+  .tituloAlcance{
+    font-size: 22px;
+    margin-left: 5px;
+    color: black;
+  }
+  
+  .tituloGeo{
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 0;
+    color:black;
+  }
+  
+  .divIzqu{
+    margin-top: 2%;
+    margin-left: 50px;
+    text-align: justify;
+  }
+  
+  .textoPag{
+    margin-right: 100px;
+    display: inline-block;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  .textoPag2{
+    margin-right: 100px;
+    display: inline-block;
+    text-align: justify;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  
+  .posicionLogo{
+    margin-right: 180px;
+    margin-top: 50px;
+    transform: rotate(5deg);
+  }
+  
+  .botonTutorial{
+    color: black;
+    background-color: #29BD3C; 
+    border-radius: 10%;
+    cursor: pointer;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .botonTutorial:hover{
+    background-color:lightgreen;
+  }
+  
+  /*A partir de aquí es el modal del tut*/
+  .video{
+    height: 110vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /*#A6A6A6 */
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .botonCierre{
+    color: black;
+    background-color: #29BD3C; 
+    border-radius: 10%;
+    cursor: pointer;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .posicionBoton{
+    margin-top: 30px;
+  }
+  .botonCierre:hover{
+    background-color:lightgreen;
+  }

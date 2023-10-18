@@ -1,0 +1,50 @@
+.modalBackground{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer{
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.title button{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: 450px;
+    cursor: pointer;
+}
+
+.modalContainer .title{
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.body p{
+    font-size: large;
+    text-align: center;
+}
+
+.body img{
+    width: 100px;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+.footer button{
+    display: flex;
+    margin-left: 215px;
+    text-align: center;
+    margin-top: 70px;
+}

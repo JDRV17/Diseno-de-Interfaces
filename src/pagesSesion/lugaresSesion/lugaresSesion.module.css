@@ -1,0 +1,98 @@
+.fotoLugares {
+    width: 500px;
+    border: 1px solid grey;
+}
+.posicionFoto{
+    margin-left: 50px;
+    padding-top: 28px;
+}
+.titulo{
+    color: black;
+}
+.cajasTexto {
+    padding: 10px; 
+    margin: 5px; 
+    border: 2px solid #ccc;
+    background-color: #E6E6E6;
+    font-weight: bold;
+    border-radius: 10%;
+}
+.posicionCajas{
+    list-style: none;
+    padding: 1;
+}
+.posicionTitulo{
+    margin-left: 0px;
+}
+.textoTodos{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 170px;
+    color:  #1DA42E;
+}
+.textoCercanos{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 130px;
+    color: black;
+    text-decoration: none;
+}
+.posicionesTextos{
+    display: flex; 
+    justify-content: space-between;
+    width: 300px;
+}
+
+.botonBuscar {
+    padding: 10px;     
+    margin: 5px; 
+    border: 2px solid #ccc;
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: #E6E6E6;
+    color: grey;
+    font-weight: bold;
+}
+.botonBuscar:hover{
+    color: black;
+}
+
+.cajasLugares ul {
+    background-color: #E1E1E1;
+    padding: 0.1px;
+    margin-left: 80px;
+}
+.textoCajasLugares{
+    margin-right: 470px;
+}
+
+.posicionFotoTexto{
+    justify-content: space-between;
+    display: flex;
+}
+
+.informacionLugares{
+    margin-right: 100px;
+}
+
+.divDer{
+    margin-bottom: 400px;
+}
+.todos{
+    cursor: pointer;
+}
+.posicionesCajasTexto{
+    display: flex; 
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.textoDeportes{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 130px;
+    color: black;
+    text-decoration: none;
+}

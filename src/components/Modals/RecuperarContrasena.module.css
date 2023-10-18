@@ -1,0 +1,72 @@
+.modalBackground{
+    width: 100vw;
+    height: 122vh;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainer{
+    width: 410px;
+    height: 410px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.title button{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    margin-left: 380px;
+    cursor: pointer;
+}
+
+.modalContainer .title{
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+form input{
+    width: 90%;
+    outline: none;
+    border: 1px solid white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 18px;
+    background: #E1E1E1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px
+}
+
+.footer button{
+    display: flex;
+    margin-left: 150px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 20px;
+}
+.contra{
+    color: black;
+}
+.botonEnviar{
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 18px;
+    outline: none;
+    border: none;
+    background-color: #29BD3C;
+    color: black;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.botonEnviar:hover{
+    background-color: lightgreen;
+}
+

@@ -1,0 +1,61 @@
+.noticiasI{
+    width: 450px;
+    height: 100px;
+    background-color: white;
+    margin-left: 3%;
+    display: flex;
+}
+
+.noticiasD{
+    width: 450px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    margin-left: 20%;
+}
+
+.titulos{
+    display: flex;
+    margin-top: 30px;
+}
+.secciones{
+    margin-top: 30px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.imagen{
+    height: 100px;
+    border-radius: 5px;
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(105, 101, 101);
+    padding-top: 8px;
+}
+
+.izquierda{
+    margin-left: 4px;
+}
+
+.cajitaC{
+    background-color: lightgray;
+    width: 200px;
+    padding: 10px 0px;
+    margin-left: 3%;
+    margin-right: 23%;
+    margin-bottom: 0px;
+    margin-top: 0px ;
+}
+
+.indice{
+    height: 30px;
+    width: 30px;
+}
+
+link:hover{
+    color: green;
+}
