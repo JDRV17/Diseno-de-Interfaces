@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 function PerfilUsuario(){
-    
     return(
         <div>
             <MenuSesion/>

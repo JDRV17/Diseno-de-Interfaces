@@ -22,7 +22,6 @@ import NoticiasIISesion from './pagesSesion/newsSesion/newsSesion2';
 import NoticiasIIISesion from './pagesSesion/newsSesion/newsSesion3';
 import PerfilUsuario from './pagesSesion/perfilUsuario/perfilUsuario';
 
-
 //Esto es para mandar un mensaje de hijo a padre convirtiendo la function a class
 function App({setModal}){  //Se pone los props del componente(Se saca datos del Json)
   return (

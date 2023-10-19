@@ -5,16 +5,26 @@ import { Link } from 'react-router-dom';
 import CrearCuenta from './CrearCuenta';
 import { useDispatch, useSelector } from "react-redux";
 import { activar, desactivar } from "../../store/actions/botonSlice";
+import { modificarEmail, modificarContraSesion } from "../../store/actions/usuarioSliceModals";
+
 
 function IniciarSesion() {
     const { activado } = useSelector((state) => state.activador);
     const { mostrarRegistro } = useSelector((state) => state.activador);
     const { recuContraseña } = useSelector((state) => state.activador);
+    const usuario =  useSelector((state) => state.usuario);
     const dispatch = useDispatch();
 
     const botonInicio = () => {
         alert('¡Iniciaste sesión!');
       };
+    
+    const modEmail = (evento) => {
+    dispatch(modificarEmail(evento.target.value));
+    }
+    const modContraseña = (evento) => {
+        dispatch(modificarContraSesion(evento.target.value));
+    }
 
     return(
         activado && (
@@ -28,10 +38,13 @@ function IniciarSesion() {
                     <input 
                         type="email" 
                         placeholder='Correo Electrónico'
+                        onChange={modEmail}
+                        
                     />
                     <input 
                         type="password" 
                         placeholder='Contraseña'
+                        onChange={modContraseña}
                     />
                 </form>
                 <span onClick={() => dispatch(activar({name:'recuContraseña'}))} className={styles.contra}> ¿Olvidaste tu contraseña?</span>

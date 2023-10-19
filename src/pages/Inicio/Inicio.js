@@ -1,21 +1,15 @@
-import { useState } from "react";
 import React from 'react';
 import styles from './Inicio.module.css' 
 import { Helmet } from 'react-helmet';
 import Menu from '../../components/Menu/menu';
 import { styled } from "styled-components"
+import { useDispatch, useSelector } from "react-redux";
+import { activar, desactivar } from "../../store/actions/botonSlice";
 
 
 function Inicio() {
-  const [mostrarTutorial, setMostrarTutorial] = useState(false);
-
-  const mostrar = () => {
-    setMostrarTutorial(true);
-  };
-
-  const cerrar = () => {
-    setMostrarTutorial(false);
-  };
+  const { mostrarTutorial } = useSelector((state) => state.activador);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -44,7 +38,7 @@ function Inicio() {
           </div>
 
           <ButtonContainer>
-            <button className={styles.botonTutorial} onClick={mostrar}>TUTORIAL</button>
+            <button className={styles.botonTutorial} onClick={() => dispatch(activar({name:'mostrarTutorial'}))}>TUTORIAL</button>
           </ButtonContainer>
 
         </div>
@@ -68,7 +62,7 @@ function Inicio() {
               </video>
             
             <div className={styles.posicionBoton}>
-              <button className={styles.botonCierre} onClick={cerrar}>Cerrar</button>
+              <button className={styles.botonCierre} onClick={() => dispatch(desactivar({name:'mostrarTutorial'}))}>Cerrar</button>
             </div>
             
           </div>

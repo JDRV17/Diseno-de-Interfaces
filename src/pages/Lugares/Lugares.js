@@ -1,20 +1,20 @@
 import styles from './Lugares.module.css'; 
 import Menu from '../../components/Menu/menu';
-import { useState } from "react"
 import { Helmet } from 'react-helmet';
-
+import { useDispatch, useSelector } from "react-redux";
+import {modificarCiudad, modificarPais} from "../../store/actions/usuarioSlicePaginas"
 
 
 function Lugares(){
-    const [textoCiudad, setTextoCiudad] = useState('');
-    const [textoPais, setTextoPais] = useState('');
+    const usuarioPaginas =  useSelector((state) => state.usuarioPaginas);
+    const dispatch = useDispatch();
     
-    const textoCiudadLug = (event) => {
-        setTextoCiudad(event.target.value); 
-    };
-    const textoPaisLug = (event) => {
-        setTextoPais(event.target.value)
-    };
+    const textoCiudadLug= (evento) => {
+        dispatch(modificarCiudad(evento.target.value));
+    }
+    const textoPaisLug= (evento) => {
+        dispatch(modificarPais(evento.target.value));
+    }
     const botonBuscar = () => {
         alert('Realizar búsqueda');
       };
@@ -40,13 +40,11 @@ function Lugares(){
                         <ul>
                             <input className={styles.cajasTexto}
                                 type="text"
-                                value={textoCiudad}
                                 onChange={textoCiudadLug}
                                 placeholder="Escribe la ciudad"
                                 />
                             <input className={styles.cajasTexto}
                                 type="text"
-                                value={textoPais}
                                 onChange={textoPaisLug}
                                 placeholder="Escribe el país"
                                 />

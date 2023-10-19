@@ -6,7 +6,8 @@ export const botonSlice = createSlice({
     activado: false,
     registro:false,
     mostrarRegistro:false,
-    recuContraseña: false
+    recuContraseña: false,
+    mostrarTutorial: false
   },
   reducers: {
     activar: (state,action) => {

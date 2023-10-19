@@ -1,26 +1,25 @@
 import styles from './lugaresSesion.module.css'
 import MenuSesion from '../../components/Menu/menuSesion';
-import { useState } from "react"
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-
+import {modificarCiudadSesion, modificarPaisSesion,
+    modificarDireccionSesion } from "../../store/actions/usuarioSlicePaginas"
+import { useDispatch, useSelector } from "react-redux";
 
 // SECCIÓN DE TODOS
 function LugaresSesionTodos(){
-    const [textoCiudad, setTextoCiudad] = useState('');
-    const [textoPais, setTextoPais] = useState('');
-    const [textoDireccion, setTextoDireccion] = useState('');
+    const usuarioPaginas =  useSelector((state) => state.usuarioPaginas);
+    const dispatch = useDispatch();
 
-    const textoDirecciones = (event) => {
-        setTextoDireccion(event.target.value); 
-    };
-    const textoCiudadLug = (event) => {
-        setTextoCiudad(event.target.value); 
-    };
-    
-    const textoPaisLug = (event) => {
-        setTextoPais(event.target.value)
-    };
+    const textoCiudadLug= (evento) => {
+        dispatch(modificarCiudadSesion(evento.target.value));
+    }
+    const textoPaisLug= (evento) => {
+        dispatch(modificarPaisSesion(evento.target.value));
+    }
+    const textoDirecciones= (evento) => {
+        dispatch(modificarDireccionSesion(evento.target.value));
+    }
     const botonBuscar = () => {
         alert('Realizar búsqueda');
       };
@@ -46,7 +45,6 @@ function LugaresSesionTodos(){
                         <div>
                             <input className={styles.cajasTexto}
                                 type="text"
-                                value={textoCiudad}
                                 onChange={textoCiudadLug}
                                 placeholder="Escribe la ciudad"
                                 />
@@ -54,7 +52,6 @@ function LugaresSesionTodos(){
                         <div>
                             <input className={styles.cajasTexto}
                                 type="text"
-                                value={textoPais}
                                 onChange={textoPaisLug}
                                 placeholder="Escribe el país"
                                 />
@@ -62,7 +59,6 @@ function LugaresSesionTodos(){
                         <div>
                         <input className={styles.cajasTexto}
                             type="text"
-                            value={textoDireccion}
                             onChange={textoDirecciones}
                             placeholder="Escribe la dirección"
                             />
