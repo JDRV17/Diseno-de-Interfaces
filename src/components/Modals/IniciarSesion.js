@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import styles from './IniciarSesion.module.css';
 import RecuperarContrasena from './RecuperarContrasena'
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import CrearCuenta from './CrearCuenta';
 import { useDispatch, useSelector } from "react-redux";
 import { activar, desactivar } from "../../store/actions/botonSlice";
 import { modificarEmail, modificarContraSesion } from "../../store/actions/usuarioSliceModals";
+import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
 
 
 function IniciarSesion() {
@@ -15,10 +16,6 @@ function IniciarSesion() {
     const usuario =  useSelector((state) => state.usuario);
     const dispatch = useDispatch();
 
-    const botonInicio = () => {
-        alert('¡Iniciaste sesión!');
-      };
-    
     const modEmail = (evento) => {
     dispatch(modificarEmail(evento.target.value));
     }
@@ -51,7 +48,7 @@ function IniciarSesion() {
 
                 <div className={styles.footer}>
                     <Link className={styles.botonInicioSesion} to='/InicioSesion'>
-                        <button onClick={botonInicio} className={styles.botonInicioSesion} >INICIAR SESIÓN</button>
+                        <button className={styles.botonInicioSesion} >INICIAR SESIÓN</button>
                     </Link>
                 </div>
                 <div className={styles.member}>

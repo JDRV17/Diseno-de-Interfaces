@@ -7,7 +7,9 @@ export const usuarioSlicePaginas = createSlice({
     lugaresPais: "",
     lugaresCiudadSesion: "",
     lugaresPaisSesion: "",
-    lugaresDirSesion: ""
+    lugaresDirSesion: "",
+    torneoCiudadSesion: "",
+    torneoPaisSesion: ""
   },
   reducers: {
     modificarCiudad: (state, action) => {
@@ -24,12 +26,18 @@ export const usuarioSlicePaginas = createSlice({
     },
     modificarDireccionSesion: (state, action) => {
       state.lugaresDirSesion = action.payload;
+    },
+    modificarTorneoCiudadSesion: (state, action) => {
+      state.torneoCiudadSesion = action.payload;
+    },
+    modificarPaisTorneoSesion: (state, action) => {
+      state.torneoPaisSesion = action.payload;
     }
   }
 });
 
 // Action creators are generated for each case reducer function
 export const { modificarCiudad, modificarPais, modificarCiudadSesion, modificarPaisSesion,
-  modificarDireccionSesion } = usuarioSlicePaginas.actions;
+  modificarDireccionSesion, modificarTorneoCiudadSesion, modificarPaisTorneoSesion } = usuarioSlicePaginas.actions;
 
 export default usuarioSlicePaginas.reducer;

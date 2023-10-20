@@ -3,10 +3,9 @@ import styles from './menu.module.css'
 import { Link } from 'react-router-dom';
 import { styled } from "styled-components"
 import IniciarSesion from '../Modals/IniciarSesion';
-import { useState } from "react";
 import CrearCuenta from '../Modals/CrearCuenta';
 import { useDispatch, useSelector } from "react-redux";
-import { activar, desactivar } from "../../store/actions/botonSlice";
+import { activar } from "../../store/actions/botonSlice";
 
 function Menu() {
     const { activado } = useSelector((state) => state.activador);

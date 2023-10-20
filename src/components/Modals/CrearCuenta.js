@@ -1,23 +1,42 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import styles from './CrearCuenta.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { desactivar } from "../../store/actions/botonSlice";
-import { modificarNombreRegistro, modificarApellidoRegistro, modificarNumDocRegistro, 
-    modificarNumTelRegistro, modificarEmailRegistro,modificarContraRegistro} from "../../store/actions/usuarioSliceModals";
+import { modificarNombreRegistro, modificarCiudadRegistro, modificarNumDocRegistro, 
+    modificarNumTelRegistro, modificarEmailRegistro,modificarContraRegistro,
+    modificarDeporRegistro, modificarEdadRegistro} from "../../store/actions/usuarioSliceModals";
+import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
 
 function CrearCuenta() {
     const { registro } = useSelector((state) => state.activador);
     const usuario =  useSelector((state) => state.usuario);
+    const mensajeSuccess = useSelector((state) => state.success.mensaje);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (mensajeSuccess) {
+            const timer = setTimeout(() => {
+                dispatch(limpiarMensaje());
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+      }, [mensajeSuccess, dispatch]);
     
-    const alerta = () => {
-        alert('Creaste la cuenta con éxito');
-    };
+      const mostrarMensaje = () => {
+        dispatch(mensajeExitoso('¡Creaste tu cuenta con éxito!'));
+      };
+
     const modNombre = (evento) => {
         dispatch(modificarNombreRegistro(evento.target.value));
     }
-    const modApellido = (evento) => {
-        dispatch(modificarApellidoRegistro(evento.target.value));
+    const modCiudad = (evento) => {
+        dispatch(modificarCiudadRegistro(evento.target.value));
+    }
+    const modDeporte = (evento) => {
+        dispatch(modificarDeporRegistro(evento.target.value));
+    }
+    const modEdad = (evento) => {
+        dispatch(modificarEdadRegistro(evento.target.value));
     }
     const modNumDoc = (evento) => {
         dispatch(modificarNumDocRegistro(evento.target.value));
@@ -40,15 +59,18 @@ function CrearCuenta() {
                     <h1 className={styles.titulo}>Crear Cuenta</h1>
                 </div>
                 <form action="#">
-                    <input type="text" placeholder='Nombre' onChange={modNombre}></input>
-                    <input type="text" placeholder='Apellido' onChange={modApellido}></input>
+                    <input type="text" placeholder='Nombre Completo' onChange={modNombre}></input>
+                    <input type="text" placeholder='Ciudad de residencia' onChange={modCiudad}></input>
+                    <input type="text" placeholder='Deporte Favorito' onChange={modDeporte}></input>
+                    <input type="number" placeholder='Edad' onChange={modEdad}></input>
                     <input type="number" placeholder='Número de documento' onChange={modNumDoc}></input>
                     <input type="number" placeholder='Número de telefono' onChange={modTel}></input>
                     <input type="email" placeholder='Correo Electrónico' onChange={modEmail}></input>
                     <input type="password" placeholder='Contraseña' onChange={modContra}></input>
                 </form>
                 <div className={styles.footer}>  
-                <button onClick={alerta} className={styles.botonCrear} >CREAR CUENTA</button>
+                <button onClick={mostrarMensaje} className={styles.botonCrear} >CREAR CUENTA</button>
+                {mensajeSuccess && <p className={styles.mensajeExitoso}>{mensajeSuccess}</p>}
                 </div>
             </div>
         </div>

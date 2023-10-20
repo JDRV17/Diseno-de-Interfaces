@@ -1,23 +1,35 @@
+import React, { useEffect } from 'react';
 import styles from './Lugares.module.css'; 
 import Menu from '../../components/Menu/menu';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from "react-redux";
 import {modificarCiudad, modificarPais} from "../../store/actions/usuarioSlicePaginas"
+import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
 
 
 function Lugares(){
     const usuarioPaginas =  useSelector((state) => state.usuarioPaginas);
+    const mensajeSuccess = useSelector((state) => state.success.mensaje);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (mensajeSuccess) {
+            const timer = setTimeout(() => {
+                dispatch(limpiarMensaje());
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+      }, [mensajeSuccess, dispatch]);
     
+    const mostrarMensaje = () => {
+    dispatch(mensajeExitoso('¡Realizaste la busqueda!'));
+    };
     const textoCiudadLug= (evento) => {
         dispatch(modificarCiudad(evento.target.value));
     }
     const textoPaisLug= (evento) => {
         dispatch(modificarPais(evento.target.value));
     }
-    const botonBuscar = () => {
-        alert('Realizar búsqueda');
-      };
 
     return(
         <div>
@@ -48,7 +60,8 @@ function Lugares(){
                                 onChange={textoPaisLug}
                                 placeholder="Escribe el país"
                                 />
-                            <button className={styles.botonBuscar} onClick={botonBuscar}>Buscar</button>
+                            <button className={styles.botonBuscar} onClick={mostrarMensaje}>Buscar</button>
+                            {mensajeSuccess && <p className={styles.mensajeExitoso}>{mensajeSuccess}</p>}
                         </ul>
                     </div>
 

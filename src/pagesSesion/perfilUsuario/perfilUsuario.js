@@ -3,13 +3,12 @@ import styles from './perfilUsuario.module.css'
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
-
 function PerfilUsuario(){
     return(
         <div>
             <MenuSesion/>
             <Helmet>
-                <title>PERFIL USUARIO/title</title>
+                <title>PERFIL USUARIO</title>
             </Helmet>
             <div className={styles.posicionesTextoFoto}>
 
@@ -36,7 +35,6 @@ function PerfilUsuario(){
                         <h3 className={styles.textoCajasLugares}>EDAD DEL USUARIO</h3>
                     </ul>
                 </div>
-
                 <div className={styles.posicionCajasTexto2}>
                     <ul>
                         <h3 className={styles.textoCajasLugares}>CLUB AL QUE PERTENECE</h3>

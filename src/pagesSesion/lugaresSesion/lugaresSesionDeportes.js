@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import styles from './lugaresSesionDeportes.module.css'
 import MenuSesion from '../../components/Menu/menuSesion';
 import { useState } from "react"
@@ -6,13 +7,28 @@ import { Link } from 'react-router-dom';
 import {modificarCiudadSesion, modificarPaisSesion,
     modificarDireccionSesion } from "../../store/actions/usuarioSlicePaginas"
 import { useDispatch, useSelector } from "react-redux";
+import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
 
 
 // SECCIÓN DE DEPORTES
 function LugaresSesionDeportes(){
     const [select,setSelect] = useState();
     const usuarioPaginas =  useSelector((state) => state.usuarioPaginas);
+    const mensajeSuccess = useSelector((state) => state.success.mensaje);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (mensajeSuccess) {
+            const timer = setTimeout(() => {
+                dispatch(limpiarMensaje());
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+      }, [mensajeSuccess, dispatch]);
+    
+    const mostrarMensaje = () => {
+    dispatch(mensajeExitoso('¡Realizaste la busqueda!'));
+    };
 
     const textoCiudadLug= (evento) => {
         dispatch(modificarCiudadSesion(evento.target.value));
@@ -23,10 +39,6 @@ function LugaresSesionDeportes(){
     const textoDirecciones= (evento) => {
         dispatch(modificarDireccionSesion(evento.target.value));
     }
-    const botonBuscar = () => {
-        alert('Realizar búsqueda');
-      };
-
     return(
         <div>
             <MenuSesion/>
@@ -66,8 +78,9 @@ function LugaresSesionDeportes(){
                             placeholder="Escribe la dirección"
                             />
                         </div>
-                        <button className={styles.botonBuscar} onClick={botonBuscar}>Buscar</button>
+                        <button className={styles.botonBuscar} onClick={mostrarMensaje}>Buscar</button>
                     </div>
+                    {mensajeSuccess && <p className={styles.mensajeExitoso}>{mensajeSuccess}</p>}
 
                     <div className={styles.posicionTitulo}>
                         <h1 className={styles.titulo}>Lugares Disponibles</h1>

@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './RecuperarContrasena.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { desactivar } from "../../store/actions/botonSlice";
 import {modificarEmailRecuContra, modificarContraRecuContra, 
     modificarConfirmContraRecuContra } from "../../store/actions/usuarioSliceModals";
+import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
 
-    function Modal() {
+function Modal() {
     const { recuContraseña } = useSelector((state) => state.activador);
-    const dispatch = useDispatch();
     const usuario =  useSelector((state) => state.usuario);
+    const mensajeSuccess = useSelector((state) => state.success.mensaje);
+    const dispatch = useDispatch();
 
-    const botonInicio = () => {
-        alert('¡Se envió un correo, verificalo!');
+    useEffect(() => {
+
+        if (mensajeSuccess) {
+            const timer = setTimeout(() => {
+                dispatch(limpiarMensaje());
+            }, 3500);
+            return () => clearTimeout(timer);
+        }
+      }, [mensajeSuccess, dispatch]);
+    
+    const mostrarMensaje = () => {
+    dispatch(mensajeExitoso('¡Actualizaste la contraseña con éxito!'));
     };
     const modEmail= (evento) => {
         dispatch(modificarEmailRecuContra(evento.target.value));
@@ -35,9 +47,9 @@ import {modificarEmailRecuContra, modificarContraRecuContra,
                     <input type="password" placeholder='Contraseña' onChange={modContra}></input>
                     <input type="password" placeholder='Confirmar contraseña' onChange={modConfirmContra}></input>
                 </form>
-                <p>contra: {usuario.confirmContraRecuContra}</p>
                 <div className={styles.footer}>
-                    <button onClick={botonInicio} className={styles.botonEnviar}>ENVIAR</button>
+                    <button onClick={mostrarMensaje} className={styles.botonEnviar}>ENVIAR</button>
+                    {mensajeSuccess && <p className={styles.mensajeExitoso}>{mensajeSuccess}</p>}
                 </div>
             </div>
         </div>

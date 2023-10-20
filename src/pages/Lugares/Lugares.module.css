@@ -65,3 +65,13 @@
 .divDer{
     margin-bottom: 400px;
 }
+
+.mensajeExitoso{
+    color: green;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px 0;
+    transition: opacity 0.5s; 
+  }

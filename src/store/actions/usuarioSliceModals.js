@@ -6,7 +6,9 @@ export const usuarioSlice = createSlice({
     email: "",
     contraSesion: "",
     nombreRegistro: "",
-    apellidoRegistro: "",
+    edadRegistro: "",
+    ciudadRegistro: "",
+    deporFavRegistro: "",
     numDocRegistro: "",
     numTelRegistro: "",
     emailRegistro: "",
@@ -25,8 +27,14 @@ export const usuarioSlice = createSlice({
     modificarNombreRegistro: (state, action) => {
         state.nombreRegistro = action.payload;
     },
-    modificarApellidoRegistro: (state, action) => {
-        state.apellidoRegistro = action.payload;
+    modificarCiudadRegistro: (state, action) => {
+        state.ciudadRegistro = action.payload;
+    },
+    modificarEdadRegistro: (state, action) => {
+        state.edadRegistro = action.payload;
+    },
+    modificarDeporRegistro: (state, action) => {
+        state.deporFavRegistro = action.payload;
     },
     modificarNumDocRegistro: (state, action) => {
         state.numDocRegistro = action.payload;
@@ -52,8 +60,9 @@ export const usuarioSlice = createSlice({
   }
 });
 
-export const { modificarEmail, modificarContraSesion, modificarNombreRegistro, modificarApellidoRegistro, 
+export const { modificarEmail, modificarContraSesion, modificarNombreRegistro, modificarCiudadRegistro, 
     modificarNumDocRegistro, modificarNumTelRegistro, modificarEmailRegistro,modificarContraRegistro,
-    modificarEmailRecuContra,modificarContraRecuContra,modificarConfirmContraRecuContra } = usuarioSlice.actions;
+    modificarEmailRecuContra,modificarContraRecuContra,modificarConfirmContraRecuContra,
+    modificarEdadRegistro, modificarDeporRegistro } = usuarioSlice.actions;
 
 export default usuarioSlice.reducer;

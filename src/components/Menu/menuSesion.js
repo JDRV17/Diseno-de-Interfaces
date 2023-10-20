@@ -3,10 +3,6 @@ import styles from "./menuSesion.module.css"
 import { Link } from 'react-router-dom';
 
 function MenuSesion() {
-    const imagenPerfil = () => {
-        alert('Tienes que iniciar sesión para ver tu perfil');
-      };
-
     return (
         <div className={styles.menuGeneral}>
             <nav className={styles.menu}>
