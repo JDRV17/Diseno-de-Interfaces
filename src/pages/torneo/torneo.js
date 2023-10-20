@@ -2,8 +2,6 @@ import Menu from '../../components/Menu/menu';
 import styles from './torneo.module.css';
 import { Helmet } from 'react-helmet';
 
-
-
 function Torneo(){
     return (
         <div>

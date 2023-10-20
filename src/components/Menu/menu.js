@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './menu.module.css' 
 import { Link } from 'react-router-dom';
 import { styled } from "styled-components"
@@ -6,19 +6,28 @@ import IniciarSesion from '../Modals/IniciarSesion';
 import CrearCuenta from '../Modals/CrearCuenta';
 import { useDispatch, useSelector } from "react-redux";
 import { activar } from "../../store/actions/botonSlice";
+import { modificarLogoFutbol } from "../../store/actions/imageSlice"; 
 
 function Menu() {
     const { activado } = useSelector((state) => state.activador);
     const { registro } = useSelector((state) => state.activador);
+    const logoFutbol = useSelector((state) => state.imagenes.logoFutbol);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        const logoFutbol = '/logo-futbol.jpg';
+        dispatch(modificarLogoFutbol(logoFutbol));
+      }, [dispatch]);
 
     return (
         <div className={styles.MenuGeneral}>
             <nav className={styles.menu}>
                 <ul>
                     <Link to='/'>
-                        <img src= '/logo-futbol.jpg' width='30'></img>
+                        {logoFutbol && <img
+                            src={logoFutbol} 
+                            width='30'
+                        />}
                     </Link>
                     <li>
                         <Link className={styles.titulo}to='/'> GEOSPORTS</Link>

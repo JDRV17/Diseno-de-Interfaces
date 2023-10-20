@@ -1,9 +1,24 @@
+import React, { useEffect } from 'react';
 import MenuSesion from '../../components/Menu/menuSesion';
 import styles from './perfilUsuario.module.css'
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { modificarPerfil, modificarFotoLapiz } from "../../store/actions/imageSlice"; 
 
 function PerfilUsuario(){
+    const dispatch = useDispatch();
+    const imagenPerfil = useSelector((state) => state.imagenes.perfil);
+    const fotoLapiz = useSelector((state) => state.imagenes.fotoLapiz);
+
+
+    useEffect(() => {
+        const imagenPerfil = '/logo-usuario.png';
+        dispatch(modificarPerfil(imagenPerfil));
+        const fotoLapiz = '/foto-lapiz.png';
+        dispatch(modificarFotoLapiz(fotoLapiz));
+      }, [dispatch]);
+
     return(
         <div>
             <MenuSesion/>
@@ -14,10 +29,17 @@ function PerfilUsuario(){
 
                 <div className={styles.posicionTitulo}>
                     <hi className={styles.tituloCuenta}>MI CUENTA</hi>
-                    <img src= '/foto-lapiz.png' width='60'></img>
+                    {fotoLapiz && <img
+                        src={fotoLapiz} 
+                        width='60'
+                    />}
                 </div>
                 <div>
-                    <img className={styles.imagenperfil} src= '/logo-usuario.png' width='97'></img>   
+                {imagenPerfil && <img
+                    src={imagenPerfil} 
+                    className={styles.imagenperfil}
+                    width='97'
+                    />}
                 </div>
 
             <div className={styles.divisionDeCajas}>

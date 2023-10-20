@@ -1,17 +1,36 @@
+import React, { useEffect } from 'react';
 import styles from './news.module.css';
+import { Link } from "react-router-dom";
 import Menu from '../../components/Menu/menu';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-
-
+import { modificarImagen1, modificarImagen2, 
+    modificarImagen3, modificarNoticias} from "../../store/actions/imageSlice"; 
+import { useDispatch, useSelector } from "react-redux";
 
 
 function NoticiasIII(){
+    const noticias = useSelector((state) => state.imagenes.noticias);
+    const imagen1 = useSelector((state) => state.imagenes.imagen1);
+    const imagen2 = useSelector((state) => state.imagenes.imagen2);
+    const imagen3 = useSelector((state) => state.imagenes.imagen3);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const noticias = "/logo noticias.png";
+        dispatch(modificarNoticias(noticias));
+        const imagen1 = "/imagen1.png";
+        dispatch(modificarImagen1(imagen1));
+        const imagen2 = "/imagen2.png";
+        dispatch(modificarImagen2(imagen2));
+        const imagen3 = "/imagen3.png";
+        dispatch(modificarImagen3(imagen3));
+    }, [dispatch]);
+
     return (
         <div>
             <Menu/>
             <Helmet>
-                <title>NOTICIAS</title>
+                <title>NOTICIASIII</title>
             </Helmet>
             <div className = {styles.titulos}>
                 <h6 className={styles.cajitaC}> MOSTRAR TODO </h6>
@@ -19,13 +38,19 @@ function NoticiasIII(){
             </div>
             <section className = {styles.titulos} >
                 <div className = {styles.noticiasI}>
-                    <img src={require("../../components/imagenes/logo noticias.png")} alt="Logo noticias" className={styles.imagen}/>
+                    {noticias && <img 
+                        src={noticias} 
+                        alt="Logo noticias" 
+                        className={styles.imagen}/>}
                     <h1>
                         NOTICIA 13
                     </h1>
                 </div>
                 <div className = {styles.noticiasD}>
-                    <img src={require("../../components/imagenes/logo noticias.png")} alt="Logo noticias" className={styles.imagen}/>
+                    {noticias && <img 
+                        src={noticias} 
+                        alt="Logo noticias" 
+                        className={styles.imagen}/>}
                     <h1>
                         NOTICIA 14
                     </h1>
@@ -33,13 +58,19 @@ function NoticiasIII(){
             </section>
             <section className = {styles.titulos} >
                 <div className = {styles.noticiasI}>
-                    <img src={require("../../components/imagenes/logo noticias.png")} alt="Logo noticias" className={styles.imagen}/>
+                    {noticias && <img 
+                        src={noticias} 
+                        alt="Logo noticias" 
+                        className={styles.imagen}/>}
                     <h1>
                         NOTICIA 15
                     </h1>
                 </div>
                 <div className = {styles.noticiasD}>
-                    <img src={require("../../components/imagenes/logo noticias.png")} alt="Logo noticias" className={styles.imagen}/>
+                    {noticias && <img 
+                        src={noticias} 
+                        alt="Logo noticias" 
+                        className={styles.imagen}/>}
                     <h1>
                         NOTICIA 16
                     </h1>
@@ -47,13 +78,19 @@ function NoticiasIII(){
             </section>
             <section className = {styles.titulos} >
                 <div className = {styles.noticiasI}>
-                    <img src={require("../../components/imagenes/logo noticias.png")} alt="Logo noticias" className={styles.imagen}/>
+                    {noticias && <img 
+                        src={noticias} 
+                        alt="Logo noticias" 
+                        className={styles.imagen}/>}
                     <h1>
                         NOTICIA 17
                     </h1>
                 </div>
                 <div className = {styles.noticiasD}>
-                    <img src={require("../../components/imagenes/logo noticias.png")} alt="Logo noticias" className={styles.imagen}/>
+                    {noticias && <img 
+                        src={noticias} 
+                        alt="Logo noticias" 
+                        className={styles.imagen}/>}
                     <h1>
                         NOTICIA 18
                     </h1>
@@ -61,20 +98,26 @@ function NoticiasIII(){
             </section>
             <footer className = {styles.secciones}>
                 <Link to = "/noticias"  >
-                    <img 
-                        src={require("../../components/imagenes/imagen1.png")} 
-                        alt="Logo pagina 1" height = "40"/>
+                    {imagen1 && <img 
+                        src={imagen1} 
+                        alt="Logo seccion1" 
+                        height = "40"
+                        />}
                  </Link>
                  <Link to = "/noticias2">
-                    <img 
-                        src={require("../../components/imagenes/imagen2.png")} 
-                        alt="Logo pagina 2" height = "37"/>
+                    {imagen2 && <img 
+                        src={imagen2} 
+                        alt="Logo seccion2" 
+                        height = "37"
+                        />}
                  </Link>
 
                 <Link to = "/noticias3">
-                    <img 
-                        src={require("../../components/imagenes/imagen3.png")} 
-                        alt="Logo pagina 2" height = "40"/>
+                    {imagen3 && <img 
+                        src={imagen3} 
+                        alt="Logo seccion3" 
+                        height = "40"
+                        />}
                  </Link>
             </footer>
         </div>

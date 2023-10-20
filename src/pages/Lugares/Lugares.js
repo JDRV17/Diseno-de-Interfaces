@@ -5,11 +5,13 @@ import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from "react-redux";
 import {modificarCiudad, modificarPais} from "../../store/actions/usuarioSlicePaginas"
 import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
+import { modificarLugares } from "../../store/actions/imageSlice"; 
 
 
 function Lugares(){
     const usuarioPaginas =  useSelector((state) => state.usuarioPaginas);
     const mensajeSuccess = useSelector((state) => state.success.mensaje);
+    const imagenGPS = useSelector((state) => state.imagenes.imagenGPS);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -20,6 +22,11 @@ function Lugares(){
             return () => clearTimeout(timer);
         }
       }, [mensajeSuccess, dispatch]);
+
+    useEffect(() => {
+    const imagenGPS = '/foto-lugares.jpg';
+    dispatch(modificarLugares(imagenGPS));
+    }, [dispatch]);
     
     const mostrarMensaje = () => {
     dispatch(mensajeExitoso('¡Realizaste la busqueda!'));
@@ -39,11 +46,11 @@ function Lugares(){
             </Helmet>
             <div className={styles.posicionFotoTexto}>
                 <div className={styles.posicionFoto}>
-                    <img 
+                    {imagenGPS && <img 
                         className={styles.fotoLugares}
-                        src= '/foto-lugares.jpg'
+                        src= {imagenGPS}
                         alt='Foto de lugares'
-                    ></img>
+                    ></img>}
                 </div>
                 
                 <div className={styles.informacionLugares}>

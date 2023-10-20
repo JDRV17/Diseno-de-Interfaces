@@ -1,4 +1,3 @@
-// successSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const successSlice = createSlice({

@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from "./menuSesion.module.css"
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { modificarPerfil, modificarLogoFutbol } from "../../store/actions/imageSlice"; 
 
 function MenuSesion() {
+    const dispatch = useDispatch();
+    const imagenPerfil = useSelector((state) => state.imagenes.perfil);
+    const logoFutbol = useSelector((state) => state.imagenes.logoFutbol);
+
+
+    useEffect(() => {
+        const imagenPerfil = '/logo-usuario.png';
+        dispatch(modificarPerfil(imagenPerfil));
+        const logoFutbol = '/logo-futbol.jpg';
+        dispatch(modificarLogoFutbol(logoFutbol));
+      }, [dispatch]);
+
     return (
         <div className={styles.menuGeneral}>
             <nav className={styles.menu}>
                 <ul>
                     <Link to='/InicioSesion'>
-                        <img src= '/logo-futbol.jpg' width='30'></img>
+                        {logoFutbol && <img
+                            src={logoFutbol} 
+                            width='30'
+                        />}
                     </Link>
                     <li>
                         <Link className={styles.titulo}to='/InicioSesion'> GEOSPORTS</Link>
@@ -29,7 +46,12 @@ function MenuSesion() {
                         <Link className={styles.titulo}to='/noticiasSesion'> NOTICIAS</Link>
                     </li>
                     <Link to='/Perfil'>
-                        <img className={styles.imagenperfil} src= '/logo-usuario.png' width='30'></img>   
+                        {imagenPerfil && <img
+                            src={imagenPerfil} 
+                            className={styles.imagenperfil}
+                            width='30'
+                        />}
+  
                     </Link>
                 </ul>
             </nav>

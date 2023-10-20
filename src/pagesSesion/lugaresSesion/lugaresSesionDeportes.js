@@ -8,6 +8,7 @@ import {modificarCiudadSesion, modificarPaisSesion,
     modificarDireccionSesion } from "../../store/actions/usuarioSlicePaginas"
 import { useDispatch, useSelector } from "react-redux";
 import {mensajeExitoso, limpiarMensaje} from "../../store/actions/successSlice";
+import { modificarLugares } from "../../store/actions/imageSlice"; 
 
 
 // SECCIÓN DE DEPORTES
@@ -15,6 +16,7 @@ function LugaresSesionDeportes(){
     const [select,setSelect] = useState();
     const usuarioPaginas =  useSelector((state) => state.usuarioPaginas);
     const mensajeSuccess = useSelector((state) => state.success.mensaje);
+    const imagenGPS = useSelector((state) => state.imagenes.imagenGPS);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -24,7 +26,12 @@ function LugaresSesionDeportes(){
             }, 3000);
             return () => clearTimeout(timer);
         }
-      }, [mensajeSuccess, dispatch]);
+    }, [mensajeSuccess, dispatch]);
+
+    useEffect(() => {
+        const imagenGPS = '/foto-lugares.jpg';
+        dispatch(modificarLugares(imagenGPS));
+    }, [dispatch]);
     
     const mostrarMensaje = () => {
     dispatch(mensajeExitoso('¡Realizaste la busqueda!'));
@@ -47,11 +54,11 @@ function LugaresSesionDeportes(){
             </Helmet>
             <div className={styles.posicionFotoTexto}>
                 <div className={styles.posicionFoto}>
-                    <img 
+                    {imagenGPS && <img 
                         className={styles.fotoLugares}
-                        src= '/foto-lugares.jpg'
+                        src= {imagenGPS}
                         alt='Foto de lugares'
-                    ></img>
+                    ></img>}
                 </div>
                 
                 <div className={styles.informacionLugares}>

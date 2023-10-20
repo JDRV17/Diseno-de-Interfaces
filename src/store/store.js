@@ -3,6 +3,7 @@ import activadorReducer from "./actions/botonSlice";
 import usuarioReducer from "./actions/usuarioSliceModals";
 import usuarioReducerPag from "./actions/usuarioSlicePaginas";
 import selectionReducer from "./actions/successSlice";
+import imageReducer from "./actions/imageSlice";
 
 
 export default configureStore({
@@ -10,6 +11,7 @@ export default configureStore({
     activador: activadorReducer,
     usuario: usuarioReducer,
     usuarioPaginas:usuarioReducerPag,
-    success: selectionReducer
+    success: selectionReducer,
+    imagenes: imageReducer
   }
 });
