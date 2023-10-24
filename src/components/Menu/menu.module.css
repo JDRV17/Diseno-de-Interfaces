@@ -12,15 +12,19 @@
     margin-right: 50px;
     margin-left: 20px;
   }
+
   .titulo{
     text-decoration: none;
     color: black;
     font-weight: bold;
     transition: color 0.3s;
+    transition: font-size 0.5s;
   }
   .titulo:hover{
     color: green;
+    font-size: large;
   }
+  
 
   .botonRegistro{
     color: black;
@@ -30,9 +34,12 @@
     padding: 5px 20px;
     text-decoration: none;
     font-weight: bold;
+    transition: padding 0.5s;
   }
   .botonRegistro:hover{
+    padding: 5px 30px;
     background-color:lightgreen;
   }
+  
 
   

@@ -83,3 +83,23 @@
   .botonCierre:hover{
     background-color:lightgreen;
   }
+
+  .fotoLogo:hover{
+    animation: bigsmall 1s ease infinite;
+  }
+  
+  @keyframes bigsmall {
+    0% {
+      width: 450px;
+      height: 450px;
+    }
+    50% {
+      width: 475px;
+      height: 475px;
+      margin-left: -25px;
+    }
+    100%{
+      width: 450px;
+      height: 450px;
+    }
+  }

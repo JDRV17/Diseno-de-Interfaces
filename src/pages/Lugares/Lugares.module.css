@@ -31,6 +31,7 @@
     text-decoration: underline;
     color: #1DA42E;
     font-weight: bold;
+    cursor: pointer;
 }
 .botonBuscar {
     padding: 10px;     
@@ -48,6 +49,12 @@
 .cajasLugares ul {
     background-color: #E1E1E1;
     padding: 0.1px;
+    transition: background-color 0.3s;
+    transition: padding 0.3s;
+}
+.cajasLugares ul:hover{
+    background-color: lightgreen;
+    padding: 5px 2px;    
 }
 .textoCajasLugares{
     margin-right: 300px;
@@ -60,6 +67,7 @@
 
 .informacionLugares{
     padding-right: 190px;
+    margin-bottom: 50px;
 }
 
 .divDer{

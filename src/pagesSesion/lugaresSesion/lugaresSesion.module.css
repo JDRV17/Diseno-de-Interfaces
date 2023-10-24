@@ -63,6 +63,12 @@
     background-color: #E1E1E1;
     padding: 0.1px;
     margin-left: 80px;
+    transition: background-color 0.3s;
+    transition: padding 0.3s;
+}
+.cajasLugares ul:hover{
+    background-color: lightgreen;
+    padding: 5px 2px;    
 }
 .textoCajasLugares{
     margin-right: 470px;
@@ -75,6 +81,7 @@
 
 .informacionLugares{
     margin-right: 100px;
+    margin-bottom: 50px;
 }
 
 .divDer{

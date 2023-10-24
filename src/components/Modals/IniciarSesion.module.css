@@ -77,6 +77,8 @@ form input{
 
 .botonInicioSesion:hover{
     background-color:lightgreen;
+    padding: 10px 30px;
+    margin-left: 100px;
 }
 
 .member{

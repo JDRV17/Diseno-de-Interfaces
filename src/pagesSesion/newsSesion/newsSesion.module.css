@@ -4,6 +4,15 @@
     background-color: white;
     margin-left: 3%;
     display: flex;
+    transition: width 0.3s;
+    transition: height 0.3s;
+}
+
+.noticiasI:hover{
+    width: 460px;
+    height: 110px;
+    margin-right: -10px;
+    background-color: lightgrey;
 }
 
 .noticiasD{
@@ -12,6 +21,15 @@
     background-color: white;
     display: flex;
     margin-left: 20%;
+    transition: width 0.3s;
+    transition: height 0.3s;
+}
+
+.noticiasD:hover{
+    width: 460px;
+    height: 110px;
+    margin-right: -10px;
+    background-color: lightgrey;
 }
 
 .titulos{
@@ -26,13 +44,19 @@
 }
 
 .imagen{
-    height: 100px;
+    height: 90px;
+    margin-top: auto;
+    margin-left: 5px;
+    margin-bottom: auto;
+    margin-right: auto;
     border-radius: 5px;
 }
 
-h1{
-    margin-left: auto;
+.titulos h1{
+    margin-left: 40px;
     margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
     color: rgb(105, 101, 101);
     padding-top: 8px;
 }

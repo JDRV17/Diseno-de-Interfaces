@@ -23,9 +23,11 @@
     font-weight: bold;
     transition: color 0.3s;
     margin-right: 50px;
+    transition: font-size 0.5s;
   }
   .titulo:hover{
     color: green;
+    font-size: large;
   }
   .imagenperfil{
     cursor: pointer;

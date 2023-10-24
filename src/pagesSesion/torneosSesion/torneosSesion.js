@@ -34,7 +34,7 @@ function TorneoSesion(){
                     type="text"
                     onChange={textoPaisTor} 
                     name="Pais" 
-                    placeholder="Escribe el pais"/>
+                    placeholder="Escribe el país"/>
                     
                 <select className={styles.selectDeporte} value={select} onChange={e=>setSelect(e.target.value)}>
                     <option>Selecciona el deporte</option>

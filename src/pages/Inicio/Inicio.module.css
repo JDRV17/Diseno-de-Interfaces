@@ -43,6 +43,26 @@
   transform: rotate(5deg);
 }
 
+.fotoLogo:hover{
+  animation: bigsmall 1s ease infinite;
+}
+
+@keyframes bigsmall {
+  0% {
+    width: 450px;
+    height: 450px;
+  }
+  50% {
+    width: 475px;
+    height: 475px;
+    margin-left: -25px;
+  }
+  100%{
+    width: 450px;
+    height: 450px;
+  }
+}
+
 .botonTutorial{
   color: black;
   background-color: #29BD3C; 
@@ -51,9 +71,11 @@
   padding: 10px 30px;
   text-decoration: none;
   font-weight: bold;
+  transition: padding 0.5s;
 }
 .botonTutorial:hover{
   background-color:lightgreen;
+  padding: 10px 40px;
 }
 
 /*A partir de aquí es el modal del tut*/
@@ -76,10 +98,12 @@
   padding: 10px 30px;
   text-decoration: none;
   font-weight: bold;
+  transition: padding 0.5s;
 }
 .posicionBoton{
   margin-top: 30px;
 }
 .botonCierre:hover{
   background-color:lightgreen;
+  padding: 10px 40px;
 }

@@ -68,7 +68,7 @@ function Inicio() {
               </video>
             
             <div className={styles.posicionBoton}>
-              <button className={styles.botonCierre} onClick={() => dispatch(desactivar({name:'mostrarTutorial'}))}>Cerrar</button>
+              <button className={styles.botonCierre} onClick={() => dispatch(desactivar({name:'mostrarTutorial'}))}>CERRAR</button>
             </div>
             
           </div>

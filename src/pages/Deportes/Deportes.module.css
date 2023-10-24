@@ -16,6 +16,11 @@
 .futbol11 ul {
     background-color: #47525E;
     padding: 1px;
+    transition: padding 0.3s;
+}
+.futbol11 ul:hover{
+    background-color: lightslategray;
+    padding: 10px;
 }
 .futbol11 h1 {
     list-style: none;
@@ -31,7 +36,11 @@
 .tenis ul {
     background-color: #47525E;
     padding: 1px;
-   
+    transition: padding 0.3s;
+}
+.tenis ul:hover{
+    background-color: lightslategray;
+    padding: 10px;
 }
 .tenis h1 {
     list-style: none;
@@ -47,6 +56,11 @@
 .basquet ul {
     background-color: #47525E;
     padding: 1px;
+    transition: padding 0.3s;
+}
+.basquet ul:hover{
+    background-color: lightslategray;
+    padding: 10px;
 }
 .basquet h1 {
     list-style: none;
@@ -62,6 +76,11 @@
 .voleibol ul {
     background-color: #47525E;
     padding: 1px;
+    transition: padding 0.3s;
+}
+.voleibol ul:hover{
+    background-color: lightslategray;
+    padding: 10px;
 }
 .voleibol h1 {
     list-style: none;

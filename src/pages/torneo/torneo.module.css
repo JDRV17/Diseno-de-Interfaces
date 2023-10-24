@@ -9,6 +9,13 @@
     display: flex;
     background-color: #47525E;
     padding: 1px;   
+    transition: color 0.3s;
+    transition: padding 0.3s;
+}
+
+.cajita:hover{
+    background-color: lightslategray;
+    padding: 10px;
 }
 
 .titulos{
