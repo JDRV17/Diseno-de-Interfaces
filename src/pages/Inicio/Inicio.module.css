@@ -38,13 +38,14 @@
 }
 
 .posicionLogo{
-  margin-right: 180px;
+  margin-right: 120px;
   margin-top: 50px;
   transform: rotate(5deg);
 }
 
 .fotoLogo:hover{
-  animation: bigsmall 1s ease infinite;
+  animation: bigsmall 1.5s ease infinite;
+
 }
 
 @keyframes bigsmall {

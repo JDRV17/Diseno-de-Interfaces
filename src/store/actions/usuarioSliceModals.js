@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const usuarioSlice = createSlice({
   name: "usuario",
   initialState: {
-    email: "",
+    email: false,
+    informacion: null,
     contraSesion: "",
     nombreRegistro: "",
     edadRegistro: "",
@@ -18,12 +19,22 @@ export const usuarioSlice = createSlice({
     confirmContraRecuContra: ""
   },
   reducers: {
-    modificarEmail: (state, action) => {
-        state.email = action.payload;
+    // modificarEmail: (state, action) => {
+    //     state.email = action.payload;
+    // },
+    // modificarContraSesion: (state, action) => {
+    //     state.contraSesion = action.payload;
+    // },
+    iniciarSesionModal: (state, action) => {
+        state.email = true;
+        state.informacion = action.payload.user ;
+        console.log(state.informacion)
     },
-    modificarContraSesion: (state, action) => {
-        state.contraSesion = action.payload;
-    },
+    // registroModal: (state, action) => {
+    //     state.emailRegistro = true;
+    //     state.informacion = action.payload.user ;
+    //     console.log(state.informacion)
+    // },
     modificarNombreRegistro: (state, action) => {
         state.nombreRegistro = action.payload;
     },
@@ -63,6 +74,6 @@ export const usuarioSlice = createSlice({
 export const { modificarEmail, modificarContraSesion, modificarNombreRegistro, modificarCiudadRegistro, 
     modificarNumDocRegistro, modificarNumTelRegistro, modificarEmailRegistro,modificarContraRegistro,
     modificarEmailRecuContra,modificarContraRecuContra,modificarConfirmContraRecuContra,
-    modificarEdadRegistro, modificarDeporRegistro } = usuarioSlice.actions;
+    modificarEdadRegistro, modificarDeporRegistro, iniciarSesionModal } = usuarioSlice.actions;
 
 export default usuarioSlice.reducer;

@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 import MenuSesion from "../../components/Menu/menuSesion";
 import { useDispatch, useSelector } from "react-redux";
 import { modificarLogo } from "../../store/actions/imageSlice"; 
+import { signOut } from 'firebase/auth';
+import { auth, provider } from "../../firebase/fireBaseConf";
 
 function InicioSesion() {
   const dispatch = useDispatch();
@@ -22,7 +24,6 @@ function InicioSesion() {
       </Helmet>
       <div className={styles.posicionTextoLogo}>
         <div className={styles.divIzqu}>
-
           <div>
             <h1 className={styles.tituloAlcance}>A Tu Alcance</h1>
             <h1 className={styles.tituloGeo}>GEOSPORTS</h1>

@@ -4,7 +4,7 @@ import { Route, Routes} from 'react-router-dom'; //Se importan dos modulos de la
 import Inicio from './pages/Inicio/Inicio';
 import Deportes from './pages/Deportes/Deportes';
 import Lugares from './pages/Lugares/Lugares';
-import { connect } from 'react-redux';
+import { useState } from 'react';
 import Noticias from './pages/news/news'
 import NoticiasII from './pages/news/news2'
 import NoticiasIII from './pages/news/news3'
@@ -21,9 +21,14 @@ import NoticiasSesion from './pagesSesion/newsSesion/newsSesion';
 import NoticiasIISesion from './pagesSesion/newsSesion/newsSesion2';
 import NoticiasIIISesion from './pagesSesion/newsSesion/newsSesion3';
 import PerfilUsuario from './pagesSesion/perfilUsuario/perfilUsuario';
+import Pag404 from './components/404/pag404'
+import IniciarSesion from './components/Modals/IniciarSesion';
 
+import {auth, provider} from './firebase/fireBaseConf'
+import { onAuthStateChanged } from 'firebase/auth';
 //Esto es para mandar un mensaje de hijo a padre convirtiendo la function a class
 function App({setModal}){  //Se pone los props del componente(Se saca datos del Json)
+
   return (
     <div className='App'>
       <Routes>
@@ -44,11 +49,13 @@ function App({setModal}){  //Se pone los props del componente(Se saca datos del 
         <Route exact path= "/noticias3Sesion" element={<NoticiasIIISesion/>}/>
         <Route exact path= "/TorneoSesion" element={<TorneoSesion/>}/>
         <Route exact path= "/Perfil" element={<PerfilUsuario/>}/>
+        <Route exact path= "*" element={<Pag404/>}/>
       </Routes>
-      
-
     </div>
+    
   );
+  
+  
 }
 
 // const mapStateToProps = (state) => {

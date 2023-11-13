@@ -15,7 +15,7 @@
 }
 .modalContainer{
     width: 390px;
-    height: 390px;
+    height: 420px;
     border-radius: 12px;
     margin: 50px auto;
     background-color: white;
@@ -90,4 +90,28 @@ form input{
     color: green;
     text-decoration: none;
     cursor: pointer;
+}
+
+.botonInicio{
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 18px;
+    outline: none;
+    border: none;
+    background-color: #29BD3C;
+    color: black;
+    cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.mensajeError {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px 0;
+    transition: opacity 0.5s; 
+    
 }

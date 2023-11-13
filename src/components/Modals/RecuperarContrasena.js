@@ -13,7 +13,6 @@ function Modal() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
         if (mensajeSuccess) {
             const timer = setTimeout(() => {
                 dispatch(limpiarMensaje());

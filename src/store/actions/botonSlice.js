@@ -5,6 +5,7 @@ export const botonSlice = createSlice({
   initialState: {
     activado: false,
     registro:false,
+    inicio:false,
     mostrarRegistro:false,
     recuContraseña: false,
     mostrarTutorial: false

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Inicio.module.css' 
 import { Helmet } from 'react-helmet';
 import Menu from '../../components/Menu/menu';
@@ -7,11 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { activar, desactivar } from "../../store/actions/botonSlice";
 import { modificarLogo } from "../../store/actions/imageSlice"; 
 
+
 function Inicio() {
   const { mostrarTutorial } = useSelector((state) => state.activador);
   const dispatch = useDispatch();
   const imagenLogo = useSelector((state) => state.imagenes.imagenLogo);
-
   useEffect(() => {
     const imagenLogo = '/logoGeosport.jpg';
     dispatch(modificarLogo(imagenLogo));
@@ -75,6 +75,8 @@ function Inicio() {
         </div>}
 
       </div>
+    
+
     </div>
   );
 }

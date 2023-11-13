@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import MenuSesion from '../../components/Menu/menuSesion';
 import styles from './perfilUsuario.module.css'
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { modificarPerfil, modificarFotoLapiz } from "../../store/actions/imageSlice"; 
+import { auth, provider } from '../../firebase/fireBaseConf'
+import { signOut } from 'firebase/auth';
 
 function PerfilUsuario(){
     const dispatch = useDispatch();
@@ -19,6 +21,15 @@ function PerfilUsuario(){
         dispatch(modificarFotoLapiz(fotoLapiz));
       }, [dispatch]);
 
+    const handleSignOut = async () => {
+    try {
+        await auth.signOut();
+        window.location.href = '/'; // Redirect to another route after sign-out
+    } catch (error) {
+        console.error(error);
+    }
+    };
+
     return(
         <div>
             <MenuSesion/>
@@ -26,7 +37,6 @@ function PerfilUsuario(){
                 <title>PERFIL USUARIO</title>
             </Helmet>
             <div className={styles.posicionesTextoFoto}>
-
                 <div className={styles.posicionTitulo}>
                     <hi className={styles.tituloCuenta}>MI CUENTA</hi>
                     {fotoLapiz && <img
@@ -68,14 +78,13 @@ function PerfilUsuario(){
                         <h3 className={styles.textoCajasLugares}>CIUDAD</h3>
                     </ul>
                     <ul>
-                        <Link className={styles.textoCerrarSesion} to = "/">
-                            <h3>CERRAR SESIÓN</h3>
-                        </Link>
+                        <h3 className={styles.textoCerrarSesion} onClick={handleSignOut}>CERRAR SESIÓN</h3>           
                     </ul>
                 </div>
 
             </div>
         </div>
+
     </div>
 
 
